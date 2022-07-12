@@ -1,0 +1,14 @@
+name: wordpress-example
+recipe: lagoon
+config:
+  flavor: wordpress
+  build:
+    - composer install
+tooling:
+  wp:
+    service: cli
+services:
+  cli:
+    overrides:
+      environment:
+        HTTP_HOST: wordpress-example.lndo.site
